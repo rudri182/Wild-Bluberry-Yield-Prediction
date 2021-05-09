@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Wildblueberry Yield Prediction</title>  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Yield</h1>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	  <input type="text" name="seeds_new" placeholder="Seeds Value" required/>
+        <input type="text" name="state_0.3" placeholder="State 1" required/>
+        <input type="text" name="state_0.4" placeholder="State 2" required/>
+        <input type="text" name="state_0.5" placeholder="State 3" required/>
+        <br> <br>
+        <input type="text" name="action_0.2" placeholder="Action 1" required/>
+        <input type="text" name="action_0.3" placeholder="Action 2" required/>
+        <input type="text" name="action_0.4" placeholder="Action 3" required/>
+        <input type="text" name="action_0.5" placeholder="Action 4" required/>
+        <input type="text" name="action_0.6" placeholder="Action 5" required/>
+        <input type="text" name="action_0.7" placeholder="Action 6" required/>
+        <br>
+        <input type="text" name="predicted_action0" placeholder="P1" required/>
+        <input type="text" name="predicted_action1" placeholder="P2" required/>
+        <input type="text" name="predicted_action2" placeholder="P3" required/>
+        <input type="text" name="predicted_action3" placeholder="P4" required/>
+        <input type="text" name="predicted_action4" placeholder="P5" required/>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   <br>
+   <br>
+   <h2>
+    {{ prediction_text }}
+   </h2>
+ </div>
+
+
+</body>
+</html>
+
